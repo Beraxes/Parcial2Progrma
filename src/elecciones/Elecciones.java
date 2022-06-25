@@ -63,61 +63,84 @@ public class Elecciones {
             if (temp.getVoto() == 1) {
                 c1++;
                 temp = temp.getEnlace();
-            }
-            if (temp.getVoto() == 2) {
+            } else if (temp.getVoto() == 2) {
                 c2++;
                 temp = temp.getEnlace();
-            }
-            if (temp.getVoto() == 3) {
+            } else if (temp.getVoto() == 3) {
                 c3++;
                 temp = temp.getEnlace();
-            }
-            if (temp.getVoto() == 4) {
+            } else if (temp.getVoto() == 4) {
                 blanco++;
                 temp = temp.getEnlace();
             } else {
                 temp = temp.getEnlace();
             }
+        }       
+        if (c1 > c2 && c1 > c3) {
+            JOptionPane.showMessageDialog(null, "El ganador de estas elecciones es Mauro con: " + c1 + " Votos");
+        } else if (c2 > c1 && c2 > c3) {
+            JOptionPane.showMessageDialog(null, "El ganador de estas elecciones es Rodrigo con: " + c2 + " Votos");
+        } else if (c3 > c1 && c3 > c2) {
+            JOptionPane.showMessageDialog(null, "El ganador de estas elecciones es Feliciano con: " + c3 + " Votos");
+        } else if (c1 == c2 && c1 == c3) {
+            JOptionPane.showMessageDialog(null, "Hubo empate en estas elecciones: " + c1 + " Votos");
+        }else{
+            JOptionPane.showMessageDialog(null, "Gano el Voto en blanco con: " + blanco + " Votos");
         }
         JOptionPane.showMessageDialog(null, "Resultado de votaciones: \n Mauro: " + c1 + "\n Rodrigo: " + c2 + "\n Feliciano: " + c3 + "\n blanco: " + blanco);
     }
 
     public void listarPorCandidatos() {
-        sufragante temp = inicio;
+        sufragante temp1 = inicio, temp2 = inicio, temp3 = inicio;
         System.out.println("Votaron por Mauro: ");
-        while (temp != null) {
-            if (temp.getVoto() == 1) {
-                temp.mostrarSufr();
-                temp = temp.getEnlace();
+        while (temp1 != null) {
+            if (temp1.getVoto() == 1) {
+                temp1.mostrarSufr();
+                temp1 = temp1.getEnlace();
             } else {
-                temp = temp.getEnlace();
+                temp1 = temp1.getEnlace();
             }
         }
         System.out.println("____________________________________");
         System.out.println("Votaron por Rodrigo: ");
-        while (temp != null) {
-            if (temp.getVoto() == 2) {
-                temp.mostrarSufr();
-                temp = temp.getEnlace();
+        while (temp2 != null) {
+            if (temp2.getVoto() == 2) {
+                temp2.mostrarSufr();
+                temp2 = temp2.getEnlace();
             } else {
-                temp = temp.getEnlace();
+                temp2 = temp2.getEnlace();
             }
         }
         System.out.println("____________________________________");
         System.out.println("Votaron por Feliciano: ");
-        while (temp != null) {
-            if (temp.getVoto() == 3) {
-                temp.mostrarSufr();
-                temp = temp.getEnlace();
+        while (temp3 != null) {
+            if (temp3.getVoto() == 3) {
+                temp3.mostrarSufr();
+                temp3 = temp3.getEnlace();
             } else {
-                temp = temp.getEnlace();
+                temp3 = temp3.getEnlace();
             }
         }
 
     }
 
     public static void main(String[] args) {
-        // TODO code application logic here
+        int opcion;
+        Elecciones objetoElecciones = new Elecciones();
+        opcion = Integer.parseInt(JOptionPane.showInputDialog("1 Registrar Votacion \n 2 Contar Votos \n 3 Listar Votantes por Candidatos \n 4 Salir "));
+        do {
+            if (opcion == 1) {
+                objetoElecciones.Votacion();
+
+            } else if (opcion == 2) {
+                objetoElecciones.contarVotos();
+            } else if (opcion == 3) {
+                objetoElecciones.listarPorCandidatos();
+            } else {
+                System.exit(0);
+            }
+            opcion = Integer.parseInt(JOptionPane.showInputDialog("1 Registrar Votacion \n 2 Contar Votos \n 3 Listar Votantes por Candidatos \n 4 Salir "));
+        } while ((opcion >= 1) && (opcion <= 4));
     }
 
 }
