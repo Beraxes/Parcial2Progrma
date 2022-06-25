@@ -60,4 +60,10 @@ public class sufragante {
         setVoto(vo);
     }
 
+    public void mostrarSufr() {
+        System.out.println(getCedula());
+        System.out.println(getNombre());
+        System.out.println(getVoto());
+    }
+
 }
