@@ -64,6 +64,7 @@ public class sufragante {
         System.out.println(getCedula());
         System.out.println(getNombre());
         System.out.println(getVoto());
+        System.out.println("__________________________________________");
     }
 
 }
