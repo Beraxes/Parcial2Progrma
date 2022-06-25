@@ -84,9 +84,36 @@ public class Elecciones {
 
     public void listarPorCandidatos() {
         sufragante temp = inicio;
+        System.out.println("Votaron por Mauro: ");
         while (temp != null) {
-
+            if (temp.getVoto() == 1) {
+                temp.mostrarSufr();
+                temp = temp.getEnlace();
+            } else {
+                temp = temp.getEnlace();
+            }
         }
+        System.out.println("____________________________________");
+        System.out.println("Votaron por Rodrigo: ");
+        while (temp != null) {
+            if (temp.getVoto() == 2) {
+                temp.mostrarSufr();
+                temp = temp.getEnlace();
+            } else {
+                temp = temp.getEnlace();
+            }
+        }
+        System.out.println("____________________________________");
+        System.out.println("Votaron por Feliciano: ");
+        while (temp != null) {
+            if (temp.getVoto() == 3) {
+                temp.mostrarSufr();
+                temp = temp.getEnlace();
+            } else {
+                temp = temp.getEnlace();
+            }
+        }
+
     }
 
     public static void main(String[] args) {
