@@ -1,6 +1,6 @@
 # Parcial2Progrma
 
-#EXPOSICIÓN DE LA PROBLEMÁTICA
+# EXPOSICIÓN DE LA PROBLEMÁTICA
 
 En miras a las próximas elecciones, a usted se le ha encargado, implementar una aplicación para el control de votantes y candidatos.
 El número de candidatos en contienda son 3, para ello usted debe registrar el candidato preferencia del sufragante (puede ser un código o el nombre) y el número documento y nombre de dicho sufragante.  El aplicativo, debe dar apoyo a los siguientes requerimientos.
