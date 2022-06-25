@@ -10,10 +10,10 @@ package elecciones;
  */
 public class sufragante {
 
-    int cedula;
-    String nombre;
-    int voto;
-    sufragante enlace;
+    private int cedula;
+    private String nombre;
+    private int voto;
+    public sufragante enlace;
 
     public sufragante() {
         cedula = 0;
@@ -61,9 +61,9 @@ public class sufragante {
     }
 
     public void mostrarSufr() {
-        System.out.println(getCedula());
-        System.out.println(getNombre());
-        System.out.println("__________________________________________");
+        System.out.println("Cedula: "+getCedula());
+        System.out.println("Nombre: "+getNombre());
+        System.out.println("__________________________________");
     }
 
 }
